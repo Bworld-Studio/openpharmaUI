@@ -35,7 +35,7 @@ export default {
 		}
 	},
 	mounted () {
-		this.getTrucs() //	TODO: RTO - Faire mieux que ça
+		this.getTrucs() //	TODO: RTO - Va failloir mieux que ça, Ptit
 	},
 	methods: {
 		getTrucs () {
