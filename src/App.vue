@@ -13,6 +13,9 @@
 			<li class="nav-item">
 				<a href="/Updates" class="nav-link">Updates</a>
 			</li>
+			<li class="nav-item">
+				<a href="/Settings" class="nav-link">Settings</a>
+			</li>
 		</div>
 		<form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -26,10 +29,7 @@
 	</nav>
 
 	<div class="container-fluid">
-		<router-view/>
-		<!-- <router-view name="Client"/> -->
-		<!-- <router-view name="Products"/> -->
-		<!-- <router-view name=""> -->
+		<router-view/> <!-- Container VueJS -->
 	</div>
 </div>
 </template>
