@@ -1,10 +1,3 @@
-// const Vue = require('vue')
-// const Router = require('vue-router')
-// const Home = require('@/components/Home')
-// const Clients = require('@/components/Clients')
-// const Client = require('@/components/Client')
-// const Products = require('@/components/Products')
-// const Updates = require('@/components/Updates')
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'

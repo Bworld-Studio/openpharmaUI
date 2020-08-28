@@ -41,6 +41,7 @@ export default {
 		return { langs: [] }
 	},
 	mounted () {
+		console.log('App monted')
 		for (var property in this.$i18n.messages) {
 			if (this.$i18n.messages.hasOwnProperty(property)) {
 				this.langs.push({ 'lang': property, 'locale': this.$i18n.messages[property].global.locale })

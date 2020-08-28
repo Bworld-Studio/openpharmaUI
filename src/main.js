@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import i18n from '@/i18n'
-require('../node_modules/bootstrap/dist/css/bootstrap.css')
+import css from '../node_modules/bootstrap/dist/css/bootstrap.css' // eslint-disable-line no-unused-vars
 
 Vue.config.productionTip = false
 
