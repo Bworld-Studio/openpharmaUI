@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'Settings',
+	name: 'Settings',
 	data () {
 		return { }
 	},

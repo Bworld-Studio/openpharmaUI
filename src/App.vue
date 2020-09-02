@@ -28,8 +28,9 @@
 		</div>
 	</nav>
 
+	<!-- Container VueJS -->
 	<div class="container-fluid">
-		<router-view/> <!-- Container VueJS -->
+		<router-view/>
 	</div>
 </div>
 </template>
@@ -46,6 +47,10 @@ export default {
 			if (this.$i18n.messages.hasOwnProperty(property)) {
 				this.langs.push({ 'lang': property, 'locale': this.$i18n.messages[property].global.locale })
 			}
+		}
+	},
+	methods: {
+		getTrucs () {
 		}
 	}
 }

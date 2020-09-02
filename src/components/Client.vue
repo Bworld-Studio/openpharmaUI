@@ -4,10 +4,10 @@
 		<span class="row">
 			<label for="numSSInput">{{$t('clients.numss-input')}}</label>
 			<div class="col">
-				<input v-model="client.numSS" v-bind:placeholder="$t('clients.numss-input')" type="text" id="numSSInput" class="form-control input_ss form-control-sm" size="13"/>
+				<input v-model="client.numSS" v-bind:placeholder="$t('clients.numss-input')" type="text" id="numSSInput" class="form-control form-control-sm input_ss" size="13"/>
 			</div>
 			<div class="col">
-				<input v-model="client.cleSS" v-bind:placeholder="$t('clients.keyss-input')" type="number" id="cleSSInput" class="form-control input_key form-control-sm" min="0" max="99" value="00" size="2"/>
+				<input v-model="client.cleSS" v-bind:placeholder="$t('clients.keyss-input')" type="number" id="cleSSInput" class="form-control form-control-sm input_key" min="0" max="99" value="00" size="2"/>
 			</div>
 		</span>
 		<span class="row">
@@ -73,22 +73,22 @@ export default {
 		return {
 			uuid: '',
 			client: {
-				uuid: undefined,
-				numSS: '',
-				cleSS: '',
-				lastName: '',
-				firstName: '',
-				birthDate: '',
-				address: '',
-				address2: '',
-				city: '',
-				zipcode: '',
-				cellphone: '',
-				phone: '',
-				center: '',
-				viewAt: '',
-				active: false,
-				isEdit: false
+				// uuid: undefined,
+				// numSS: '',
+				// cleSS: '',
+				// lastName: '',
+				// firstName: '',
+				// birthDate: '',
+				// address: '',
+				// address2: '',
+				// city: '',
+				// zipcode: '',
+				// cellphone: '',
+				// phone: '',
+				// center: '',
+				// viewAt: '',
+				// active: false,
+				// isEdit: false
 			}
 		}
 	},
@@ -150,13 +150,11 @@ export default {
 </script>
 
 <style>
-
-.input_ss { width: 9em; }
-.input_key { width: 3em; }
-.input_key input[type=number], input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
-	-moz-appearance: textfield;
-	-webkit-appearance: none;
-	margin: 0;
-}
-
+	.input_ss { width: 9em; }
+	.input_key { width: 3em; }
+	.input_key input[type=number], input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+		-moz-appearance: textfield;
+		-webkit-appearance: none;
+		margin: 0;
+	}
 </style>
