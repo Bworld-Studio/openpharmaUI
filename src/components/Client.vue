@@ -73,22 +73,22 @@ export default {
 		return {
 			uuid: '',
 			client: {
-				// uuid: undefined,
-				// numSS: '',
-				// cleSS: '',
-				// lastName: '',
-				// firstName: '',
-				// birthDate: '',
-				// address: '',
-				// address2: '',
-				// city: '',
-				// zipcode: '',
-				// cellphone: '',
-				// phone: '',
-				// center: '',
-				// viewAt: '',
-				// active: false,
-				// isEdit: false
+				uuid: undefined,
+				numSS: '',
+				cleSS: '',
+				lastName: '',
+				firstName: '',
+				birthDate: '',
+				address: '',
+				address2: '',
+				city: '',
+				zipcode: '',
+				cellphone: '',
+				phone: '',
+				center: '',
+				viewAt: '',
+				active: false,
+				isEdit: false
 			}
 		}
 	},
@@ -103,45 +103,43 @@ export default {
 	methods: {
 		getClient (uuid) {
 			var url = '/api/clients/' + uuid
-			axios.get(url)
+
+			axios.get(url)		// Call API GET
 				.then(result => {
 					this.mapClient(result.data)
-				},
-				error => { console.error(error) }
-				)
+				}, error => { console.error(error) })
 		},
 		mapClient (pClient) {
-			debugger
-			console.log(pClient.birthDate)
+			// debugger
+			// console.log(pClient.birthDate)
 			this.client = pClient
+			// this.client.isEdit = true
 			var viewAt = new Date()
-			this.client.viewAt = viewAt
+			this.client['viewAt'] = viewAt
 		},
 		addClient () {
 			this.client.active = true
 
-			axios
-				.post('api/clients', this.client).then(res => {
+			axios.post('api/clients', this.client)
+				.then(res => {
 					this.client = {}
 					this.client.isEdit = false
-					this.getClients()
+					this.getClient(this.client.uuid)
 				}).catch(err => { console.log(err) })
 		},
 		updateClient () {
-			axios
-				.put(`/api/clients/${this.client.uuid}`, this.client).then(res => {
+			axios.put(`/api/clients/${this.client.uuid}`, this.client)
+				.then(res => {
 					this.client = {}
 					this.client.isEdit = false
-					this.getTasks()
+					this.getClient(this.client.uuid)
 					console.log(res)
-				})
-				.catch(err => { console.log(err) })
+				}).catch(err => { console.log(err) })
 		},
 		deleteClient (uuid) {
-			axios
-				.delete(`/api/clients/${uuid}`).then(res => {
+			axios.delete(`/api/clients/${uuid}`)
+				.then(res => {
 					this.client = {}
-					this.getTasks()
 					console.log(res)
 				}).catch(err => { console.log(err) })
 		}

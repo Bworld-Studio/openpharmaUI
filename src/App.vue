@@ -2,7 +2,7 @@
 <div id="app">
 	<nav class="navbar navbar-expand navbar-dark bg-dark">
 		<!-- <a href="#" class="navbar-brand">{{ $t('global.openPharma') }}</a> -->
-		<a href="/" class="navbar-brand" style="font-family:'Ubuntu Medium"><img src="@/assets/logo.png" style="margin-right: 8px; width:41px">{{ $t('global.openPharma') }}</a>
+		<a href="/Home" class="navbar-brand" style="font-family:'Ubuntu Medium"><img src="@/assets/logo.png" style="margin-right: 8px; width:41px">{{ $t('global.openPharma') }}</a>
 		<div class="navbar-nav mr-auto">
 			<li class="nav-item">
 				<a href="/Clients" class="nav-link">{{ $t('global.viewsHome.clients.title') }}</a>

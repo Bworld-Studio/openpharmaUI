@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 const { VueLoaderPlugin } = require('vue-loader')
+const VueAutoRoutingPlugin = require('vue-auto-routing/lib/webpack-plugin')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -66,7 +67,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 				ignore: ['.*']
 			}
 		]),
-		new VueLoaderPlugin()
+		new VueLoaderPlugin(),
+		new VueAutoRoutingPlugin({
+			// Path to the directory that contains your page components.
+			pages: 'src/components',
+
+			// A string that will be added to importing component path (default @/pages/).
+			importPrefix: '@/components/'
+		})
 	]
 })
 
