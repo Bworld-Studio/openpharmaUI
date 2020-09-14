@@ -1,7 +1,23 @@
-import routes from 'vue-auto-routing'
+const routes = require('vue-auto-routing')
 
-import Vue from 'vue'
-import Router from 'vue-router'
+const Vue = require('vue')
+const Router = require('vue-router')
+
+// const Home = require('@/components/Home')
+// const Clients = require('@/components/Clients')
+// const Client = require('@/components/Client')
+// const Products = require('@/components/Products')
+// const Updates = require('@/components/Updates')
+// const Settings = require('@/components/Settings')
+
+// const generateRoutes = require('vue-route-generator')
+
+// const code = generateRoutes({
+// 	pages: './components' // Vue page component directory
+// })
+
+// import Vue from 'vue'
+// import Router from 'vue-router'
 // import upperFirst from 'lodash/upperFirst'
 // import camelCase from 'lodash/camelCase'
 // import Home from '@/components/Home'
@@ -10,6 +26,8 @@ import Router from 'vue-router'
 // import Products from '@/components/Products'
 // import Updates from '@/components/Updates'
 // import Settings from '@/components/Settings'
+
+// console.log(code)
 
 Vue.use(Router)
 
@@ -30,7 +48,7 @@ Vue.use(Router)
 // 	})
 // 	return routes
 // }
-
+// module.exports
 export default new Router({
 	mode: 'history',
 	routes
@@ -80,4 +98,42 @@ export default new Router({
 // // 		// sinon revenez à la racine du module.
 // // 		componentConfig.default || componentConfig
 // // 	)
+// })
+
+// import Vue from 'vue'
+// import Router from 'vue-router'
+// import Home from '@/components/Home'
+// import Auth from '@/components/Auth';
+
+// Vue.use(Router);
+
+// let baseRoutes = [
+//   {
+//     path: '/',
+//     name: 'home',
+//     component: Home
+//   },
+//   {
+//     path: '/login',
+//     name: 'auth',
+//     component: Auth
+//   },
+// ];
+
+// // Import all of the resource routes files.
+// function loadRoutes() {
+//   const context = require.context('@/resources', true, /routes.js$/i)
+//   return context.keys()
+//     .map(context) // import module
+//     .map(m => m.default) // get `default` export from each resolved module
+// }
+
+// const resourceRoutes = loadRoutes();
+// resourceRoutes.forEach((route) => {
+//   routes.push(route[0]);
+// });
+
+// export default new Router({
+//   mode: 'history',
+//   routes,
 // })
