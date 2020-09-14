@@ -3,6 +3,7 @@
 		"locale": "Français",
 		"lang": "fr",
 		"openPharma": "OpenPharma",
+		"version": "ui 0.1.1",
 		"viewsHome": {
 			"clients": {
 				"title": "Patients",
