@@ -69,10 +69,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 		]),
 		new VueLoaderPlugin(),
 		new VueAutoRoutingPlugin({
-			// Path to the directory that contains your page components.
-			pages: 'src/components',
-
-			// A string that will be added to importing component path (default @/pages/).
+			pages: 'src/components/',
 			importPrefix: '@/components/'
 		})
 	]

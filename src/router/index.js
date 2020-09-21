@@ -1,7 +1,19 @@
-const routes = require('vue-auto-routing')
+import routes from 'vue-auto-routing'
 
-const Vue = require('vue')
-const Router = require('vue-router')
+import Vue from 'vue'
+import Router from 'vue-router'
+
+Vue.use(Router)
+
+export default new Router({
+	// Pass the generated routes into the routes option
+	routes
+})
+
+// const routes = require('vue-auto-routing')
+
+// const Vue = require('vue')
+// const Router = require('vue-router')
 
 // const Home = require('@/components/Home')
 // const Clients = require('@/components/Clients')
@@ -29,7 +41,7 @@ const Router = require('vue-router')
 
 // console.log(code)
 
-Vue.use(Router)
+// Vue.use(Router)
 
 // var requireComponent = function () {
 // 	const components = require.context('@/components', true, /Base[A-Z]\w+\.(vue|js)$/)
@@ -49,10 +61,10 @@ Vue.use(Router)
 // 	return routes
 // }
 // module.exports
-export default new Router({
-	mode: 'history',
-	routes
-})
+// export default new Router({
+// 	mode: 'history',
+// 	routes
+// })
 
 // export default new Router({
 // 	mode: 'history',
@@ -66,74 +78,36 @@ export default new Router({
 // 	]
 // })
 
-// const requireComponent = require.context(
-// 	// Le chemin relatif du dossier composants
-// 	'./components',
-// 	// Suivre ou non les sous-dossiers
-// 	false,
-// 	// L'expression régulière utilisée pour faire concorder les noms de fichiers de composant de base
-// 	/Base[A-Z]\w+\.(vue|js)$/
-// )
-
-// requireComponent.keys().forEach(fileName => {
-// // 	// Récupérer la configuration du composant
-// // const componentConfig = requireComponent(fileName)
-
-// // 	// Récupérer le nom du composant en PascalCase
-// // 	const componentName = upperFirst(
-// // 		camelCase(
-// // 			// Retrouver le nom du fichier indépendemment de la profondeur de dossier
-// // 			fileName
-// // 				.split('/')
-// // 				.pop()
-// // 				.replace(/\.\w+$/, '')
-// // 		)
-// // 	)
-
-// // 	// Créer un composant global
-// // 	Vue.component(
-// // 		componentName,
-// // 		// Chercher les options du composant dans `.default`, qui
-// // 		// existera si le composant a été exporté avec `export default`,
-// // 		// sinon revenez à la racine du module.
-// // 		componentConfig.default || componentConfig
-// // 	)
-// })
-
+// Method without module
 // import Vue from 'vue'
 // import Router from 'vue-router'
 // import Home from '@/components/Home'
-// import Auth from '@/components/Auth';
+// // import Auth from '@/components/Auth'
 
-// Vue.use(Router);
+// Vue.use(Router)
 
-// let baseRoutes = [
-//   {
-//     path: '/',
-//     name: 'home',
-//     component: Home
-//   },
-//   {
-//     path: '/login',
-//     name: 'auth',
-//     component: Auth
-//   },
-// ];
+// let routes = [
+// 	{ path: '/', name: 'home', component: Home }
+// 	// { path: '/login', name: 'auth', component: Auth },
+// ]
+// // const routes = baseRoutes
 
 // // Import all of the resource routes files.
-// function loadRoutes() {
-//   const context = require.context('@/resources', true, /routes.js$/i)
-//   return context.keys()
-//     .map(context) // import module
-//     .map(m => m.default) // get `default` export from each resolved module
+// const loadRoutes = function () {
+// 	const context = require.context('@/components', false, /Base[A-Z]\w+\.(vue|js)$/)
+// 	debugger
+// 	// const context = require.context('@/components', true)
+// 	return context.keys()
+// 		.map(context) // import module
+// 		.map(m => m.default) // get `default` export from each resolved module
 // }
 
-// const resourceRoutes = loadRoutes();
+// const resourceRoutes = loadRoutes()
 // resourceRoutes.forEach((route) => {
-//   routes.push(route[0]);
-// });
+// 	routes.push(route[0])
+// })
 
 // export default new Router({
-//   mode: 'history',
-//   routes,
+// 	mode: 'history',
+// 	routes
 // })
