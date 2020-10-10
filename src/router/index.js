@@ -1,14 +1,20 @@
-import routes from 'vue-auto-routing'
+// import routes from 'vue-auto-routing'
 
 import Vue from 'vue'
 import Router from 'vue-router'
+import Home from '@/components/Home'
+import Clients from '@/components/Clients'
+import Client from '@/components/Client'
+import Products from '@/components/Products'
+import Updates from '@/components/Updates'
+import Settings from '@/components/Settings'
 
-Vue.use(Router)
+// Vue.use(Router)
 
-export default new Router({
-	// Pass the generated routes into the routes option
-	routes
-})
+// export default new Router({
+// 	// Pass the generated routes into the routes option
+// 	routes
+// })
 
 // const routes = require('vue-auto-routing')
 
@@ -41,7 +47,7 @@ export default new Router({
 
 // console.log(code)
 
-// Vue.use(Router)
+Vue.use(Router)
 
 // var requireComponent = function () {
 // 	const components = require.context('@/components', true, /Base[A-Z]\w+\.(vue|js)$/)
@@ -66,17 +72,17 @@ export default new Router({
 // 	routes
 // })
 
-// export default new Router({
-// 	mode: 'history',
-// 	routes: [
-// 		{ path: '/', name: 'Home', component: Home },
-// 		{ path: '/Clients', name: 'Clients', component: Clients },
-// 		{ path: '/Client/:uuid', name: 'Client', component: Client, props: { uuid: '' } },
-// 		{ path: '/Products', name: 'Products', component: Products },
-// 		{ path: '/Updates', name: 'Updates', component: Updates },
-// 		{ path: '/Settings', name: 'Settings', component: Settings }
-// 	]
-// })
+export default new Router({
+	mode: 'history',
+	routes: [
+		{ path: '/', name: 'Home', component: Home },
+		{ path: '/Clients', name: 'Clients', component: Clients },
+		{ path: '/Client/:uuid', name: 'Client', component: Client, props: { uuid: '' } },
+		{ path: '/Products', name: 'Products', component: Products },
+		{ path: '/Updates', name: 'Updates', component: Updates },
+		{ path: '/Settings', name: 'Settings', component: Settings }
+	]
+})
 
 // Method without module
 // import Vue from 'vue'

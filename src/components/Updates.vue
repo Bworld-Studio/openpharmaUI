@@ -19,9 +19,10 @@ export default {
 	},
 	methods: {
 		updateBDPM (file) {
-			var url = '/api/updates/' + file
 			// Call API
-			axios.put(url).then(
+			var par = { 'file': file }
+			console.log(par)
+			axios.put(`/api/updates/`, par).then(
 				result => {
 					// console.log(result.data)
 					// this.clients = result.data
