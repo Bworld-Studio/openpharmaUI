@@ -5,7 +5,7 @@
 		<a href="/Home" class="navbar-brand" style="font-family:'Ubuntu Medium">
 			<img src="@/assets/logo.png" style="margin-right: 8px; width:41px">
 			<span>{{ $t('global.openPharma') }}</span>
-			<span class="version_number">ui 0.1.1</span>
+			<span class="version_number">ui 0.1.2</span>
 			</a>
 		<div class="navbar-nav mr-auto">
 			<li class="nav-item">
