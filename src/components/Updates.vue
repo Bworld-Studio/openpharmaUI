@@ -7,6 +7,11 @@
 			<button class="btn btn-info" v-on:click="updateBDPM('cpd')">Update CPD</button>
 	</div>
 </template>
+
+<style>
+
+</style>
+
 <script>
 const axios = require('axios')
 export default {
@@ -35,5 +40,3 @@ export default {
 	}
 }
 </script>
-<style>
-</style>

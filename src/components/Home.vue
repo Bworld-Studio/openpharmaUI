@@ -12,6 +12,10 @@
 </div>
 </template>
 
+<style>
+
+</style>
+
 <script>
 export default {
 	name: 'Home',
@@ -54,7 +58,3 @@ export default {
 	}
 }
 </script>
-
-<style>
-
-</style>

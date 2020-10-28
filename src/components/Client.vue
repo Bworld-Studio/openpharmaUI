@@ -64,6 +64,16 @@
 </div>
 </template>
 
+<style>
+	.input_ss { width: 9em; }
+	.input_key { width: 3em; }
+	.input_key input[type=number], input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+		-moz-appearance: textfield;
+		-webkit-appearance: none;
+		margin: 0;
+	}
+</style>
+
 <script>
 const axios = require('axios')
 
@@ -146,13 +156,3 @@ export default {
 	}
 }
 </script>
-
-<style>
-	.input_ss { width: 9em; }
-	.input_key { width: 3em; }
-	.input_key input[type=number], input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
-		-moz-appearance: textfield;
-		-webkit-appearance: none;
-		margin: 0;
-	}
-</style>

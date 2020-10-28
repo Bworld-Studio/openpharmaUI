@@ -9,6 +9,20 @@ import Products from '@/components/Products'
 import Updates from '@/components/Updates'
 import Settings from '@/components/Settings'
 
+Vue.use(Router)
+
+export default new Router({
+	mode: 'history',
+	routes: [
+		{ path: '/', name: 'Home', component: Home },
+		{ path: '/Clients', name: 'Clients', component: Clients },
+		{ path: '/Client/:uuid', name: 'Client', component: Client, props: { uuid: '' } },
+		{ path: '/Products', name: 'Products', component: Products },
+		{ path: '/Updates', name: 'Updates', component: Updates },
+		{ path: '/Settings', name: 'Settings', component: Settings }
+	]
+})
+
 // Vue.use(Router)
 
 // export default new Router({
@@ -47,7 +61,7 @@ import Settings from '@/components/Settings'
 
 // console.log(code)
 
-Vue.use(Router)
+
 
 // var requireComponent = function () {
 // 	const components = require.context('@/components', true, /Base[A-Z]\w+\.(vue|js)$/)
@@ -71,18 +85,6 @@ Vue.use(Router)
 // 	mode: 'history',
 // 	routes
 // })
-
-export default new Router({
-	mode: 'history',
-	routes: [
-		{ path: '/', name: 'Home', component: Home },
-		{ path: '/Clients', name: 'Clients', component: Clients },
-		{ path: '/Client/:uuid', name: 'Client', component: Client, props: { uuid: '' } },
-		{ path: '/Products', name: 'Products', component: Products },
-		{ path: '/Updates', name: 'Updates', component: Updates },
-		{ path: '/Settings', name: 'Settings', component: Settings }
-	]
-})
 
 // Method without module
 // import Vue from 'vue'

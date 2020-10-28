@@ -18,6 +18,10 @@
 		</div>
 	</div>
 </template>
+
+<style>
+</style>
+
 <script>
 export default {
 	name: 'Products',
@@ -44,5 +48,3 @@ export default {
 	}
 }
 </script>
-<style>
-</style>

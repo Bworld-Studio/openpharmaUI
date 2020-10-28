@@ -8,6 +8,10 @@
 	</div>
 </template>
 
+<style>
+
+</style>
+
 <script>
 export default {
 	name: 'Settings',
@@ -24,7 +28,3 @@ export default {
 	}
 }
 </script>
-
-<style>
-
-</style>
