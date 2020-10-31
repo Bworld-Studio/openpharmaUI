@@ -3,7 +3,7 @@
 	"version": "0.1.1",
 	"description": "openPharma UI",
 	"author": "GrayFawkes <gray.fawkes@outlook.com>",
-	"private": true,
+	"private": false,
 	"scripts": {
 		"dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
 		"start": "npm run dev",
