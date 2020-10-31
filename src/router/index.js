@@ -61,8 +61,6 @@ export default new Router({
 
 // console.log(code)
 
-
-
 // var requireComponent = function () {
 // 	const components = require.context('@/components', true, /Base[A-Z]\w+\.(vue|js)$/)
 // 	console.log(components)
