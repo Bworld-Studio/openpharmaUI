@@ -3,6 +3,7 @@
 <div class="container">
 	<div class="title">{{$t('global.openPharma')}}</div>
 	<div class="title">{{$t(viewLabel)}}</div>
+	<div v-bind="variable"></div>
 </div>
 </template>
 
@@ -17,7 +18,8 @@ export default {
 	data () {
 		return {
 			// Déclarations des variables de la vue utilisable dans les scripts et le DOM
-			viewLabel: 'global.openPharma'
+			viewLabel: 'global.openPharma',
+			variable: ''
 		}
 	},
 	mounted () {
@@ -27,7 +29,9 @@ export default {
 	methods: {
 		// Fonctions déclarées dans le composants
 		getTrucs () {
+			var variableCopy = this.variable // Accès aux variables dans le code JS
 			console.log('Template: Display stuff in the console')
+			console.log(variableCopy)
 		}
 	}
 }
