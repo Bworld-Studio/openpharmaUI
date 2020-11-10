@@ -25,36 +25,13 @@ export default {
 				{ id: 'Clients', title: 'global.viewsHome.clients.title', subtitle: 'global.viewsHome.clients.subtitle', text: 'global.viewsHome.clients.text', action1: 'global.viewsHome.clients.action1', action2: 'global.viewsHome.clients.action2' },
 				{ id: 'Products', title: 'global.viewsHome.products.title', subtitle: 'global.viewsHome.products.subtitle', text: 'global.viewsHome.products.text', action1: 'global.viewsHome.products.action1', action2: 'global.viewsHome.products.action2' }
 			]
-
-			// client: {
-			// 	uuid: undefined,
-			// 	numSS: '',
-			// 	cleSS: '',
-			// 	lastName: '',
-			// 	firstName: '',
-			// 	birthDate: '',
-			// 	active: false,
-			// 	isEdit: false
-			// }
 		}
 	},
 	mounted () {
-		this.getTrucs() //	TODO: RTO - Va falloir mieux que ça, Ptit
+
 	},
 	methods: {
-		getTrucs () {
-			console.log('Home: Get trucs')
-			// Call API
-			// axios.get('/api/clients').then(
-			// 	result => {
-			// 		console.log(result.data)
-			// 		this.clients = result.data
-			// 	},
-			// 	error => {
-			// 		console.error(error)
-			// 	}
-			// )
-		}
+
 	}
 }
 </script>
