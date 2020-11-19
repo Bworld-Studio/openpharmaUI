@@ -1,9 +1,9 @@
 <template>
 <!-- Commentaire HTML -->
 <div class="container">
-	<div class="title">{{$t('global.openPharma')}}</div>
-	<div class="title">{{$t(viewLabel)}}</div>
-	<div v-bind="variable"></div>
+	<!-- <div class="title">{{$t('global.openPharma')}}</div> -->
+	<!-- <div class="title">{{$t(viewLabel)}}</div> -->
+	<!-- <div v-bind="variable"></div> -->
 </div>
 </template>
 
