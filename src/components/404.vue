@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-	name: 'NotFound',
+	name: '404',
 	data () {
 		return {
 
