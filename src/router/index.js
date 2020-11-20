@@ -28,6 +28,6 @@ export default new Router({
 function loadRoutes () {
 	const context = require.context('@/components', true, /_routes.js$/i)
 	return context.keys()
-		.map(context) 				// import module
-		.map(m => m.default) // get `default` export from each resolved module
+		.map(context)					// import module
+		.map(m => m.default)	// get `default` export from each resolved module
 }
