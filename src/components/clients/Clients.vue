@@ -38,16 +38,6 @@ export default {
 	data () {
 		return {
 			clients: []
-			// client: {
-			// 	uuid: undefined,
-			// 	numSS: '',
-			// 	cleSS: '',
-			// 	lastName: '',
-			// 	firstName: '',
-			// 	birthDate: '',
-			// 	active: false,
-			// 	isEdit: false
-			// }
 		}
 	},
 	mounted () {

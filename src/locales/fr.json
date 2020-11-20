@@ -4,7 +4,7 @@
 		"lang": "fr",
 		"openPharma": "OpenPharma",
 		"version": "ui 0.1.2",
-		"viewsHome": {
+		"home": {
 			"clients": {
 				"title": "Patients",
 				"subtitle": "Patients",
