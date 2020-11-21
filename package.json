@@ -1,7 +1,7 @@
 {
-	"name": "openPharma-ui",
+	"name": "openpharmaUI",
 	"version": "0.1.2",
-	"description": "openPharma UI",
+	"description": "openpharma UI",
 	"author": "GrayFawkes <gray.fawkes@outlook.com>",
 	"private": false,
 	"scripts": {

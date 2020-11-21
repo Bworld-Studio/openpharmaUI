@@ -8,21 +8,21 @@
 			</a>
 		<div class="navbar-nav mr-auto">
 			<li class="nav-item">
-				<a href="/Clients" class="nav-link">{{ $t('global.viewsHome.clients.title') }}</a>
+				<a href="/Clients" class="nav-link">{{ $t('clients.menu') }}</a>
 			</li>
 			<li class="nav-item">
-				<a href="/Products" class="nav-link">{{ $t('global.viewsHome.products.title') }}</a>
+				<a href="/Products" class="nav-link">{{ $t('products.menu') }}</a>
 			</li>
 			<li class="nav-item">
-				<a href="/Updates" class="nav-link">Updates</a>
+				<a href="/Updates" class="nav-link">{{ $t('updates.menu')}}</a>
 			</li>
 			<li class="nav-item">
-				<a href="/Settings" class="nav-link">Settings</a>
+				<a href="/Settings" class="nav-link">{{ $t('settings.menu') }}</a>
 			</li>
 		</div>
 		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			<input class="form-control mr-sm-2" type="search" v-bind:placeholder="$t('search.placeholder-input')" aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{$t('buttons.search-button')}}</button>
 		</form>
 		<div class="navbar-nav mr-auto locale-changer">
 			<select v-model="$i18n.locale" class="form-control">
@@ -48,14 +48,15 @@ export default {
 	},
 	mounted () {
 		console.log('App monted')
-		for (var property in this.$i18n.messages) {
-			if (this.$i18n.messages.hasOwnProperty(property)) {
-				this.langs.push({ 'lang': property, 'locale': this.$i18n.messages[property].global.locale })
-			}
-		}
+		this.getLocalesList()
 	},
 	methods: {
-		getTrucs () {
+		getLocalesList () {
+			for (var property in this.$i18n.messages) {
+				if (this.$i18n.messages.hasOwnProperty(property)) {
+					this.langs.push({ 'lang': property, 'locale': this.$i18n.messages[property].global.locale })
+				}
+			}
 		}
 	}
 }

@@ -2,7 +2,7 @@ import Client from '@/components/client/Client'
 
 export default [
 	{
-		path: '/client:uuid',
+		path: '/client',
 		name: 'client',
 		component: Client,
 		props: { uuid: '' }

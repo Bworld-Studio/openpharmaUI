@@ -3,23 +3,10 @@
 		"locale": "Français",
 		"lang": "fr",
 		"openPharma": "OpenPharma",
-		"version": "ui 0.1.2",
-		"home": {
-			"clients": {
-				"title": "Patients",
-				"subtitle": "Patients",
-				"text": "Texte Patients",
-				"action1": "Liste des patients",
-				"action2": "Ajouter un patient"
-			},
-			"products": {
-				"title": "Produits",
-				"subtitle": "Produits",
-				"text": "Texte Produits",
-				"action1": "Liste des produits",
-				"action2": "Ajouter un produit"
-			}
-		}
+		"version": "ui 0.1.2"
+	},
+	"home": {
+		"title": "Accueil"
 	},
 	"buttons": {
 		"yes-button": "Oui",
@@ -29,9 +16,17 @@
 		"close-button": "Fermer",
 		"update-button": "Mettre à jour",
 		"edit-button": "Editer",
-		"delete-button": "Supprimer"
+		"delete-button": "Supprimer",
+		"search-button": "Rechercher"
 	},
 	"clients": {
+		"menu": "Patients",
+		"title": "Liste des patients",
+		"text": "Dans ce menu vous trouverez la base patients",
+		"action1": "Liste des patients",
+		"action2": "Nouveau patient"
+	},
+	"client": {
 		"numss-input": "Numéro de Sécurité Sociale",
 		"keyss-input": "Clé",
 		"name-input": "Nom",
@@ -48,5 +43,24 @@
 		"messages": {
 			"error": "Erreur"
 		}
+	},
+	"products": {
+		"menu": "Produits",
+		"title": "Liste des produits",
+		"text": "Dans ce menu vous trouverez les différents produits disponibles",
+		"action1": "Liste des produits",
+		"action2": "Ajouter un produit"
+	},
+	"search": {
+		"menu": "Recherche",
+		"placeholder-input": "Tapez pour chercher"
+	},
+	"settings": {
+		"menu": "Paramètres",
+		"title": "Paramètres"
+	},
+	"updates": {
+		"menu": "Bases de données",
+		"title": "Mises à jour des bases de données"
 	}
 }

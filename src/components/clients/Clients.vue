@@ -1,20 +1,19 @@
 <template>
 	<div id="clients-list" class="container-fluid">
-		<div>
-			<div class="">
-				<h1 class="text-center">Client List</h1>
-				<table class="table">
-					<tr v-for="(line) in clients" v-bind:key="line.uuid" v-bind:title="line.numSS">
-						<td class="text-left">{{line.lastName}}</td>
-						<td class="text-left">{{line.firstName}}</td>
-						<td class="text-left">{{ $d(new Date(line.birthDate), "short") }}</td>
-						<td class="text right">
-							<button class="btn btn-info" v-on:click="editClient(line)">{{$t('buttons.edit-button')}}</button>
-							<!-- <button class="btn btn-danger" v-on:click="deleteClient(line.uuid)">{{$t('buttons.delete-button')}}</button> -->
-						</td>
-					</tr>
-				</table>
-			</div>
+		<div class="">
+			<h1 class="text-center">{{$t('clients.title')}}</h1>
+			<button class="btn btn-info" v-on:click="addClient()">{{$t('clients.action2')}}</button>
+			<table class="table">
+				<tr v-for="(line) in clients" v-bind:key="line.uuid" v-bind:title="line.numSS">
+					<td class="text-left">{{line.lastName}}</td>
+					<td class="text-left">{{line.firstName}}</td>
+					<td class="text-left">{{ $d(new Date(line.birthDate), "short") }}</td>
+					<td class="text right">
+						<button class="btn btn-info" v-on:click="editClient(line)">{{$t('buttons.edit-button')}}</button>
+						<!-- <button class="btn btn-danger" v-on:click="deleteClient(line.uuid)">{{$t('buttons.delete-button')}}</button> -->
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </template>
@@ -41,6 +40,7 @@ export default {
 		}
 	},
 	mounted () {
+		console.log('Clients Component')
 		this.getClients()
 	},
 	methods: {
@@ -48,7 +48,7 @@ export default {
 			// Call API
 			axios.get('/api/clients').then(
 				result => {
-					console.log(result.data)
+					// console.log(result.data)
 					this.clients = result.data
 				},
 				error => {
@@ -56,22 +56,21 @@ export default {
 				}
 			)
 		},
-		// addClient () {
-		// 	console.log(this.client)
-		// 	this.client.active = true
+		addClient () {
+			console.log(this.client)
+			this.client.active = true
 
-		// 	// Call API
-		// 	axios
-		// 		.post('api/clients', this.client)
-		// 		.then(res => {
-		// 			this.client = {}
-		// 			this.client.isEdit = false
-		// 			this.getClients()
-		// 		})
-		// 		.catch(err => {
-		// 			console.log(err)
-		// 		})
-		// },
+			// Call API
+			axios.post('api/clients', this.client)
+				.then(res => {
+					this.client = {}
+					this.client.isEdit = false
+					this.getClients()
+				})
+				.catch(err => {
+					console.log(err)
+				})
+		},
 		editClient (pClient) {
 			this.$router.push({ name: 'Client', params: { uuid: pClient.uuid } })
 			// this.client = pClient
