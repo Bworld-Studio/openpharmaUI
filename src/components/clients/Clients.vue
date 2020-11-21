@@ -10,7 +10,7 @@
 					<td class="text-left">{{ $d(new Date(line.birthDate), "short") }}</td>
 					<td class="text right">
 						<button class="btn btn-info" v-on:click="editClient(line)">{{$t('buttons.edit-button')}}</button>
-						<!-- <button class="btn btn-danger" v-on:click="deleteClient(line.uuid)">{{$t('buttons.delete-button')}}</button> -->
+						<button class="btn btn-danger" v-on:click="deleteClient(line.uuid)">{{$t('buttons.delete-button')}}</button>
 					</td>
 				</tr>
 			</table>
