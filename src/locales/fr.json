@@ -6,7 +6,7 @@
 		"version": "ui 0.1.2"
 	},
 	"home": {
-		"title": "Accueil"
+		"title": "Acceuil"
 	},
 	"buttons": {
 		"yes-button": "Oui",
@@ -43,7 +43,7 @@
 		"messages": {
 			"creation-success": "Patient créé avec succés",
 			"creation-error": "Erreur lors de la création du patient",
-			"update-success": "Parient mis à jour avec succés",
+			"update-success": "Patient mis à jour avec succés",
 			"update-error": "Error lors de la mise à jour du patient",
 			"error": "Une erreur est survenue"
 		}
@@ -54,6 +54,13 @@
 		"text": "Dans ce menu vous trouverez les différents produits disponibles",
 		"action1": "Liste des produits",
 		"action2": "Ajouter un produit"
+	},
+	"orders": {
+		"menu": "Commandes",
+		"title": "Liste des commandes",
+		"text": "Dans ce menu vous trouverez les commandes en cours ou passées",
+		"action1": "Liste des commandes",
+		"action2": "Créééééer une commande"
 	},
 	"search": {
 		"menu": "Recherche",

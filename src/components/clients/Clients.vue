@@ -36,6 +36,7 @@ export default {
 	name: 'Clients',
 	data () {
 		return {
+			header: [],
 			clients: []
 		}
 	},

@@ -13,6 +13,8 @@
 
 </style>
 <script>
+// const axios = require('axios')
+
 export default {
 	name: 'Tamplate',		// Nom du composant
 	data () {

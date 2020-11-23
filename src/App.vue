@@ -14,6 +14,9 @@
 				<a href="/Products" class="nav-link">{{ $t('products.menu') }}</a>
 			</li>
 			<li class="nav-item">
+				<a href="/Orders" class="nav-link">{{ $t('orders.menu') }}</a>
+			</li>
+			<li class="nav-item">
 				<a href="/Updates" class="nav-link">{{ $t('updates.menu')}}</a>
 			</li>
 			<li class="nav-item">

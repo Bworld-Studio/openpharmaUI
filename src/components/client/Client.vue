@@ -132,7 +132,11 @@ export default {
 					this.client = {}
 					this.client.isEdit = false
 					this.getClient(this.client.uuid)
-				}).catch(err => { console.log(err) })
+					// $('#alertSuccess').alert()
+				}).catch(err => {
+					// $('#alertError').alert()
+					console.log(err)
+				})
 		},
 		updateClient () {
 			axios.put(`/api/clients/${this.client.uuid}`, this.client)

@@ -22,7 +22,8 @@ export default {
 		return {
 			views: [
 				{ id: 'Clients', title: 'clients.title', text: 'clients.text', action1: 'clients.action1', path1: '/Clients', action2: 'clients.action2', path2: '/Client' },
-				{ id: 'Products', title: 'products.title', text: 'products.text', action1: 'products.action1', action2: 'products.action2' }
+				{ id: 'Products', title: 'products.title', text: 'products.text', action1: 'products.action1', action2: 'products.action2' },
+				{ id: 'Orders', title: 'orders.title', text: 'orders.text', action1: 'orders.action1', action2: 'orders.action2' }
 			]
 		}
 	},
