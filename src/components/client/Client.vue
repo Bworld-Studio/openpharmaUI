@@ -56,8 +56,9 @@
 		</span>
 	</form>
 	<div>
-	<div id="alertError" class="alert alert-danger" role="alert">{{$('client.messages.creation-success')}}</div>
-	<div id="alertSuccess" class="alert alert-success" role="alert">{{$('client.messages.creation-error')}}</div>
+		<div id="alertError" class="alert alert-danger" role="alert">{{$('client.messages.creation-success')}}</div>
+		<div id="alertSuccess" class="alert alert-success" role="alert">{{$('client.messages.creation-error')}}</div>
+	</div>
 </div>
 </template>
 
