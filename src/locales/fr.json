@@ -41,7 +41,11 @@
 		"center-input": "Centre CPAM",
 		"viewAt-input": "Dernière visite",
 		"messages": {
-			"error": "Erreur"
+			"creation-success": "Patient créé avec succés",
+			"creation-error": "Erreur lors de la création du patient",
+			"update-success": "Parient mis à jour avec succés",
+			"update-error": "Error lors de la mise à jour du patient",
+			"error": "Une erreur est survenue"
 		}
 	},
 	"products": {

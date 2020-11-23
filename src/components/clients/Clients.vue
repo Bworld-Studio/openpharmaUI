@@ -2,14 +2,14 @@
 	<div id="clients-list" class="container-fluid">
 		<div class="">
 			<h1 class="text-center">{{$t('clients.title')}}</h1>
-			<button class="btn btn-info" v-on:click="addClient()">{{$t('clients.action2')}}</button>
+			<button class="btn btn-primary" v-on:click="addClient()">{{$t('clients.action2')}}</button>
 			<table class="table">
 				<tr v-for="(line) in clients" v-bind:key="line.uuid" v-bind:title="line.numSS">
 					<td class="text-left">{{line.lastName}}</td>
 					<td class="text-left">{{line.firstName}}</td>
 					<td class="text-left">{{ $d(new Date(line.birthDate), "short") }}</td>
 					<td class="text right">
-						<button class="btn btn-info" v-on:click="editClient(line)">{{$t('buttons.edit-button')}}</button>
+						<button class="btn btn-primary" v-on:click="editClient(line)">{{$t('buttons.edit-button')}}</button>
 						<button class="btn btn-danger" v-on:click="deleteClient(line.uuid)">{{$t('buttons.delete-button')}}</button>
 					</td>
 				</tr>

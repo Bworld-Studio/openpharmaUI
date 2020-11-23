@@ -55,7 +55,9 @@
 			<button v-else v-on:click="updateClient()" type="button" class="btn btn-primary btn-block btn-sm mt-3" >{{$t('buttons.update-button')}}</button>
 		</span>
 	</form>
-</div>
+	<div>
+	<div id="alertError" class="alert alert-danger" role="alert">{{$('client.messages.creation-success')}}</div>
+	<div id="alertSuccess" class="alert alert-success" role="alert">{{$('client.messages.creation-error')}}</div>
 </template>
 
 <style>
