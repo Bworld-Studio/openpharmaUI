@@ -2,7 +2,7 @@
 	<div id="clients-list" class="container-fluid">
 		<div class="">
 			<h1 class="text-center">{{$t('clients.title')}}</h1>
-			<button class="btn btn-primary" v-on:click="addClient()">{{$t('clients.action2')}}</button>
+			<button class="btn btn-primary" v-on:click="createClient()">{{$t('clients.action2')}}</button>
 			<table class="table">
 				<tr v-for="(line) in clients" v-bind:key="line.uuid" v-bind:title="line.numSS">
 					<td class="text-left">{{line.lastName}}</td>
@@ -41,7 +41,8 @@ export default {
 		}
 	},
 	mounted () {
-		console.log('Clients Component')
+		console.log('Component: Clients')
+		console.log(this.$router)
 		this.getClients()
 	},
 	methods: {
@@ -57,23 +58,28 @@ export default {
 				}
 			)
 		},
-		addClient () {
-			console.log(this.client)
+		createClient () {
+			this.client = {}
 			this.client.active = true
-
-			// Call API
-			axios.post('api/clients', this.client)
-				.then(res => {
-					this.client = {}
-					this.client.isEdit = false
-					this.getClients()
-				})
-				.catch(err => {
-					console.log(err)
-				})
+			this.$router.push({ name: 'Client' })
 		},
+		// addClient () {
+		// 	console.log(this.client)
+		// 	this.client.active = true
+
+		// 	// Call API
+		// 	axios.post('api/clients', this.client)
+		// 		.then(res => {
+		// 			this.client = {}
+		// 			this.client.isEdit = false
+		// 			this.getClients()
+		// 		})
+		// 		.catch(err => {
+		// 			console.log(err)
+		// 		})
+		// },
 		editClient (pClient) {
-			this.$router.push({ name: 'Client', params: { uuid: pClient.uuid } })
+			this.$router.push({ name: 'client', params: { uuid: pClient.uuid } })
 			// this.client = pClient
 			// this.client.lastName = this.client.lastName.toUpperCase()
 			// this.client.isEdit = true

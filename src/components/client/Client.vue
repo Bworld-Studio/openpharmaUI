@@ -56,8 +56,8 @@
 		</span>
 	</form>
 	<div>
-		<div id="alertError" class="alert alert-danger" role="alert">{{$('client.messages.creation-success')}}</div>
-		<div id="alertSuccess" class="alert alert-success" role="alert">{{$('client.messages.creation-error')}}</div>
+		<div id="alertError" class="alert alert-danger" role="alert">{{$t('client.messages.creation-success')}}</div>
+		<div id="alertSuccess" class="alert alert-success" role="alert">{{$t('client.messages.creation-error')}}</div>
 	</div>
 </div>
 </template>
@@ -76,7 +76,7 @@
 const axios = require('axios')
 
 export default {
-	name: 'Client',
+	name: 'client',
 	data () {
 		return {
 			uuid: '',
@@ -101,7 +101,7 @@ export default {
 		}
 	},
 	mounted () {
-		console.log('Client Component')
+		console.log('Component: Client')
 		console.log(this.$route)
 		if (this.$route.params.uuid !== undefined) {
 			this.uuid = this.$route.params.uuid
@@ -132,9 +132,7 @@ export default {
 					this.client = {}
 					this.client.isEdit = false
 					this.getClient(this.client.uuid)
-					// $('#alertSuccess').alert()
 				}).catch(err => {
-					// $('#alertError').alert()
 					console.log(err)
 				})
 		},

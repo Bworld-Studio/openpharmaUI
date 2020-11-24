@@ -14,12 +14,12 @@
 </style>
 <script>
 export default {
-	name: 'Tamplate',		// Nom du composant
+	name: 'Login',		// Nom du composant
 	data () {
 		return {
 			// Déclarations des variables de la vue utilisable dans les scripts et le DOM
-			viewLabel: 'global.openPharma',
-			variable: ''
+			user: '',
+			password: ''
 		}
 	},
 	mounted () {

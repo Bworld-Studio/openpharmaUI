@@ -9,21 +9,10 @@
 				"ecmaVersion": 11
 		},
 		"rules": {
-				"indent": [
-						"error",
-						"tab"
-				],
-				"linebreak-style": [
-						"error",
-						"windows"
-				],
-				"quotes": [
-						"error",
-						"single"
-				],
-				"semi": [
-						"error",
-						"never"
-				]
+				"indent": [ "error", "tab" ],
+				"linebreak-style": [ "error", "windows" ],
+				"quotes": [ "error", "single" ],
+				"semi": [ "error", "never" ],
+				"space-before-function-paren": [ 2, { "anonymous": "never", "named": "never" }]
 		}
 }
