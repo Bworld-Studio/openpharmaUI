@@ -24,11 +24,11 @@
 			</li>
 		</div>
 		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="search" v-bind:placeholder="$t('search.placeholder-input')" aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{$t('buttons.search-button')}}</button>
+			<input class="form-control-sm" type="search" v-bind:placeholder="$t('search.placeholder-input')" aria-label="Search">
+			<button class="btn btn-outline-success btn-sm my-2 my-sm-0" type="submit">{{$t('buttons.search-button')}}</button>
 		</form>
 		<div class="navbar-nav mr-auto locale-changer">
-			<select v-model="$i18n.locale" class="form-control">
+			<select v-model="$i18n.locale" class="form-control-sm">
 				<option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang.lang">{{ lang.locale }}</option>
 			</select>
 		</div>
