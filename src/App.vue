@@ -6,7 +6,7 @@
 			<span>{{ $t('global.openPharma') }}</span>
 			<span class="version_number">ui 0.1.2</span>
 			</a>
-		<div class="navbar-nav mr-auto">
+		<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
 				<a href="/Clients" class="nav-link">{{ $t('clients.menu') }}</a>
 			</li>
@@ -22,16 +22,16 @@
 			<li class="nav-item">
 				<a href="/Settings" class="nav-link">{{ $t('settings.menu') }}</a>
 			</li>
-		</div>
+		</ul>
 		<form class="form-inline my-2 my-lg-0">
 			<input class="form-control-sm" type="search" v-bind:placeholder="$t('search.placeholder-input')" aria-label="Search">
-			<button class="btn btn-outline-success btn-sm my-2 my-sm-0" type="submit">{{$t('buttons.search-button')}}</button>
+			<button class="btn btn-success btn-sm my-2 my-sm-0" type="submit">{{$t('buttons.search-button')}}</button>
 		</form>
-		<div class="navbar-nav mr-auto locale-changer">
+		<!-- <div class="navbar-nav mr-auto locale-changer">
 			<select v-model="$i18n.locale" class="form-control-sm">
 				<option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang.lang">{{ lang.locale }}</option>
 			</select>
-		</div>
+		</div> -->
 	</nav>
 
 	<!-- Container VueJS -->
@@ -42,24 +42,30 @@
 </template>
 
 <script>
+const axios = require('axios')
+
 export default {
 	name: 'App',
 	data () {
 		return {
-			langs: []
+			status: undefined
 		}
 	},
 	mounted () {
 		console.log('App monted')
-		this.getLocalesList()
+		this.getBackEndStatus()
 	},
 	methods: {
-		getLocalesList () {
-			for (var property in this.$i18n.messages) {
-				if (this.$i18n.messages.hasOwnProperty(property)) {
-					this.langs.push({ 'lang': property, 'locale': this.$i18n.messages[property].global.locale })
+		getBackEndStatus () {
+			axios.get('/api/sataus').then(
+				result => {
+					if (result === 200) this.status = true
+				},
+				error => {
+					console.error(error)
+					this.status = false
 				}
-			}
+			)
 		}
 	}
 }

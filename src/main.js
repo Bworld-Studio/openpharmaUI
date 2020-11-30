@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import i18n from '@/i18n'
 import css from '../node_modules/bootstrap/dist/css/bootstrap.css' // eslint-disable-line no-unused-vars
+import JQuery from 'jquery'
+window.$ = JQuery
 
 Vue.config.productionTip = false
 

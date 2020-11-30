@@ -56,7 +56,7 @@
 		</span>
 	</form>
 	<div>
-		<div id="alertError" class="alert alert-danger" role="alert">{{$t('client.messages.creation-success')}}</div>
+		<div id="alertError" class="alert alert-danger" role="alert" >{{$t('client.messages.creation-success')}}</div>
 		<div id="alertSuccess" class="alert alert-success" role="alert">{{$t('client.messages.creation-error')}}</div>
 	</div>
 </div>
@@ -129,22 +129,26 @@ export default {
 
 			axios.post('api/clients', this.client)
 				.then(res => {
+					$('#alertSuccess').alert()	// eslint-disable-line no-undef
 					this.client = {}
 					this.client.isEdit = false
 					this.getClient(this.client.uuid)
 				}).catch(err => {
 					console.log(err)
+					$('#alertError').alert()	// eslint-disable-line no-undef
 				})
 		},
 		updateClient () {
 			axios.put(`/api/clients/${this.client.uuid}`, this.client)
 				.then(res => {
+					$('#alertSuccess').alert()	// eslint-disable-line no-undef
 					this.client = {}
 					this.client.isEdit = false
 					this.getClient(this.client.uuid)
 					console.log(res)
 				}).catch(err => {
 					console.log(err)
+					$('#alertError').alert()	// eslint-disable-line no-undef
 				})
 		},
 		deleteClient (uuid) {
