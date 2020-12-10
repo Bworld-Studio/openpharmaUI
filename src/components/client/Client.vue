@@ -73,6 +73,8 @@
 </style>
 
 <script>
+// import routes from './_store'
+const routes = require('./_store')
 const axios = require('axios')
 
 export default {
@@ -112,6 +114,7 @@ export default {
 	},
 	methods: {
 		getClient (uuid) {
+			routes.getClient()
 			var url = '/api/clients/' + uuid
 
 			axios.get(url)		// Call API GET
