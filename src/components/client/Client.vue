@@ -81,7 +81,7 @@ export default {
 	name: 'client',
 	data () {
 		return {
-			uuid: '',
+			// uuid: '',
 			client: {
 				uuid: undefined,
 				numSS: '',
@@ -101,6 +101,9 @@ export default {
 				isEdit: false
 			}
 		}
+	},
+	props: {
+		uuid: ''
 	},
 	mounted () {
 		console.log('Component: Client')
