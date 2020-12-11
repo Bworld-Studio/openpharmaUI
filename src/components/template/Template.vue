@@ -16,7 +16,7 @@
 // const axios = require('axios')
 
 export default {
-	name: 'Tamplate',		// Nom du composant
+	name: 'Template',		// Nom du composant
 	data () {
 		return {
 			// Déclarations des variables de la vue utilisable dans les scripts et le DOM

@@ -1,67 +1,78 @@
 <template>
 <div id="app">
-	<nav class="navbar navbar-expand navbar-dark bg-dark container-fluid">
-		<div>
-			<a href="/" class="navbar-brand" style="font-family:'Ubuntu Medium">
-				<img src="@/assets/logo.png" style="margin-right: 8px; width:41px">
-				<span>{{ $t('global.openPharma') }}</span>
-				<span class="version_number">ui 0.1.2</span>
-			</a>
-			<ul class="navbar-nav mr-auto">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#" style="font-family:'Ubuntu Medium">
+			<img src="@/assets/logo.png" style="margin-right: 8px; width:41px">
+			<span>{{ $t('global.openPharma') }}</span>
+			<span class="version_number">ui 0.1.3</span>
+		</a>
+		<div class="navbar-nav container-fluid">
+			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a href="/Clients" class="nav-link">{{ $t('clients.menu') }}</a>
+					<a class="nav-link" href="/Clients">{{ $t('clients.menu') }}</a>
 				</li>
 				<li class="nav-item">
-					<a href="/Products" class="nav-link">{{ $t('products.menu') }}</a>
+					<a class="nav-link" href="/Products">{{ $t('products.menu') }}</a>
 				</li>
 				<li class="nav-item">
-					<a href="/Orders" class="nav-link">{{ $t('orders.menu') }}</a>
+					<a class="nav-link" href="/Orders">{{ $t('orders.menu') }}</a>
 				</li>
 				<li class="nav-item">
-					<a href="/Updates" class="nav-link">{{ $t('updates.menu')}}</a>
+					<a class="nav-link" href="/Updates">{{ $t('updates.menu')}}</a>
 				</li>
 				<li class="nav-item">
-					<a href="/Settings" class="nav-link">{{ $t('settings.menu') }}</a>
+					<a class="nav-link" href="/Settings">{{ $t('settings.menu') }}</a>
 				</li>
 			</ul>
 		</div>
-		<div>
-			<form class="input-group">
-				<div class="d-flex">
-				<input class="form-control-sm" type="search" v-bind:placeholder="$t('search.placeholder-input')" aria-label="Search" aria-describedby="button-addon2">
-				<div class="input-group-append">
-					<button class="btn btn-success btn-sm my-2 my-sm-0 btn-outline-secondary" type="button" id="button-addon2" v-on:click="search()">
-						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-							<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-						</svg>
-					</button> <!-- {{$t('buttons.search-button')}} -->
+		<div class="navbar-nav">
+			<input class="form-control-sm" type="search" v-bind:placeholder="$t('search.placeholder-input')" aria-label="Search" aria-describedby="button-search">
+			<div class="input-group-append">
+				<button class="btn btn-success btn-sm my-2 my-sm-0 btn-outline-secondary" type="button" id="button-search" v-on:click="search()">
+					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search text-light" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+						<path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+					</svg>
+				</button>
+			</div>
+			<div class="navbar-nav">
+				<div v-if="status" v-on:click="getBackEndStatus()">
+					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-broadcast text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 0 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707z"/>
+						<path d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+					</svg>
 				</div>
+				<div v-else v-on:click="getBackEndStatus()">
+					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-circle-fill text-danger" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+					</svg>
 				</div>
-			</form>
+			</div>
 		</div>
-		<!-- <div class="navbar-nav mr-auto locale-changer">
-			<select v-model="$i18n.locale" class="form-control-sm">
-				<option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang.lang">{{ lang.locale }}</option>
-			</select>
-		</div> -->
 	</nav>
 
 	<!-- Container VueJS -->
 	<div class="container-fluid">
 		<router-view/>
 	</div>
+	<div>
+		<modal v-if="showModal" @close="showModal = false">
+			<router-view class="view three" name="Search"></router-view>
+		</modal>
+	</div>
+	<div class="modal-dialog"></div>
 </div>
 </template>
 
 <script>
-const axios = require('axios')
+import axios from 'axios'
 
 export default {
 	name: 'App',
 	data () {
 		return {
-			status: undefined
+			status: undefined,
+			showModal: false
 		}
 	},
 	mounted () {
@@ -70,12 +81,13 @@ export default {
 	},
 	methods: {
 		search () {
-
+			this.showModal = true
 		},
 		getBackEndStatus () {
-			axios.get('/api/sataus').then(
+			axios.get('/api/status').then(
 				result => {
-					if (result === 200) this.status = true
+					console.log(result)
+					if (result.status === 200) this.status = true
 				},
 				error => {
 					console.error(error)
