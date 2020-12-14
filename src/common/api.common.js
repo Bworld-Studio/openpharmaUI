@@ -1,11 +1,21 @@
-const Vue = require ('vue')
+// const Vue = require ('vue')
 const axios = require('axios')
 
-const ApiService = {
+const ApiCommon = {
 	checkServerStatus () {
-		// Vue.use(VueAxios, axios)
-		// Vue.axios.defaults.baseURL = API_URL
+		var serverStatus = false
+		axios.get('/api/status').then(
+			result => {
+				if (result.status === 200) serverStatus = true
+				return serverStatus
+			},
+			error => {
+				console.error(error)
+				serverStatus = false
+				return serverStatus
+			}
+		)
 	}
 }
 
-export default ApiService
+export default ApiCommon

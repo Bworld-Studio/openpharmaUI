@@ -35,14 +35,14 @@
 					</svg>
 				</button>
 			</div>
-			<div class="navbar-nav">
-				<div v-if="status" v-on:click="getBackEndStatus()">
+			<div class="ml-2" v-on:click="getServerStatus()">
+				<div v-if="serverStatus">
 					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-broadcast text-success" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 0 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707z"/>
 						<path d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
 					</svg>
 				</div>
-				<div v-else v-on:click="getBackEndStatus()">
+				<div v-else>
 					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-circle-fill text-danger" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
 					</svg>
@@ -65,35 +65,41 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios' // eslint-disable-line no-unused-vars
+import ApiCommon from '@/common/api.common' // eslint-disable-line no-unused-vars
 
 export default {
 	name: 'App',
 	data () {
 		return {
-			status: undefined,
+			serverStatus: false,
 			showModal: false
 		}
 	},
 	mounted () {
 		console.log('App monted')
-		this.getBackEndStatus()
+		this.getServerStatus()
 	},
 	methods: {
 		search () {
 			this.showModal = true
 		},
-		getBackEndStatus () {
-			axios.get('/api/status').then(
-				result => {
-					console.log(result)
-					if (result.status === 200) this.status = true
-				},
-				error => {
-					console.error(error)
-					this.status = false
-				}
-			)
+		getServerStatus () {
+			const me = this
+			setInterval(function () {
+				var serverStatus = null
+				axios.get('/api/status').then(
+					result => {
+						debugger
+						console.log(serverStatus)
+						if (result.status === 200) me.serverStatus = true
+					},
+					error => {
+						console.error(error)
+						me.serverStatus = false
+					}
+				)
+			}, 1000)
 		}
 	}
 }
