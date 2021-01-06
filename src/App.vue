@@ -90,7 +90,7 @@ export default {
 				var serverStatus = null
 				axios.get('/api/status').then(
 					result => {
-						debugger
+						// debugger
 						console.log(serverStatus)
 						if (result.status === 200) me.serverStatus = true
 					},
