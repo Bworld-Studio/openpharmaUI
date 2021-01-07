@@ -1,24 +1,8 @@
-# openpharma UI
-## 0.1.3
+# openpharma WebUI 0.1.3
 
+## Description
+This package is the Web UI for the openpharma application, it works on all browsers
 
-
-
-
-## Commit Legend
-```
-➕ :heavy_plus_sign: When adding a file or implementing a feature
-🔨 :hammer: Fixing a bug or issue
-💚 :green_heart: Improving code or comments
-⚡ :zap: Improving performance
-📜 :scroll: Updating docs or readme
-🔑 :key: Dealing with security
-🔁 :repeat: Updating dependencies or data
-✅ :white_check_mark: when a new release was built
-👕 :shirt: when refactoring or removing linter warnings
-❌ :x: when removing code or files
-
-```
 
 ## Build Setup
 
@@ -26,6 +10,23 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# Compiles and hot-reloads for development @ localhost:8080
 npm run dev
+
+# Compiles and minifies for production
+npm run build
+```
+
+## Commit Legend
+```
+➕ :heavy_plus_sign:	When adding a file or implementing a feature
+🔨 :hammer:				Fixing a bug or issue
+💚 :green_heart:		Improving code or comments
+⚡ :zap:				Improving performance
+📜 :scroll:				Updating docs or readme
+🔑 :key:				Dealing with security
+🔁 :repeat:				Updating dependencies or data
+✅ :white_check_mark:	New release is built
+👕 :shirt:				Refactoring or removing linter warnings
+❌ :x:					Removing code or files
 ```
