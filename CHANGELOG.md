@@ -18,6 +18,7 @@
   - ➕ Connection with database on PostgreSQL
   - ➕ DB API running
 
+
 ## Commit Legend
 ```
 ➕ :heavy_plus_sign:	Adding a file or implementing a feature
