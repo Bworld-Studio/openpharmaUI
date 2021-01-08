@@ -4,13 +4,18 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import i18n from '@/i18n'
-import css from '../node_modules/bootstrap/dist/css/bootstrap.css' // eslint-disable-line no-unused-vars
+// import css from '../node_modules/bootstrap/dist/css/bootstrap.css' // eslint-disable-line no-unused-vars
 import JQuery from 'jquery'
 window.$ = JQuery
 
 Vue.config.productionTip = false
 
 i18n.locale = 'fr'
+
+// openpharma UI CSS
+require('../node_modules/bootstrap/dist/css/bootstrap.css')
+require('./assets/styles/op.css')
+require('./assets/styles/opwebui.css')
 
 /* eslint-disable no-new */
 new Vue({
