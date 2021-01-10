@@ -3,10 +3,10 @@
 		"locale": "English",
 		"lang": "en",
 		"openPharma": "OpenPharma",
-		"version": "ui 0.1.2"
+		"version": "WebUI 0.1.3"
 	},
 	"home": {
-
+		"title": "Home"
 	},
 	"buttons": {
 		"yes-button": "Yes",
