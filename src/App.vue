@@ -207,7 +207,6 @@ export default {
 				var serverStatus = null
 				axios.get('/api/status').then(
 					result => {
-						// debugger
 						console.log(serverStatus)
 						if (result.status === 200) me.serverStatus = true
 					},
@@ -220,24 +219,3 @@ export default {
 		}
 	}
 }
-</script>
-
-<style>
-#app {
-	font-family: 'OpenSans', Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: var(--main-color2);
-	display: flex;
-	flex-direction: row;
-	height: 100%;
-}
-nav {
-	background-color: var(--main-color2) !important;
-}
-.version_number {
-	font-size: 0.8rem;
-	color: grey;
-}
-</style>
