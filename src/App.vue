@@ -50,7 +50,6 @@
 			</div>
 		</div>
 	</nav>
-
 	<div class="container-fluid">
 		<router-view/>
 	</div>
@@ -62,7 +61,6 @@
 	<div class="modal-dialog"></div>
 </div>
 </template> -->
-
 <template>
 <div id="app">
 	<nav class="nav navbar-dark bg-dark">
@@ -169,22 +167,12 @@
 		</div>
 	</nav> -->
 
-	<!-- <div class="container-fluid">
-		<router-view/>
-	</div> -->
-	<!-- <div>
-		<modal v-if="showModal" @close="showModal = false">
-			<router-view class="view three" name="Search"></router-view>
-		</modal>
-	</div> -->
-	<!-- <div class="modal-dialog"></div> -->
 </div>
 </template>
 
 <script>
 import axios from 'axios' // eslint-disable-line no-unused-vars
 import ApiCommon from '@/common/api.common' // eslint-disable-line no-unused-vars
-
 export default {
 	name: 'App',
 	data () {
