@@ -11,7 +11,7 @@
 			</div>
 		</span>
 		<span class="row">
-			<label for="lastNameInput">{{$t('client.name-input')}}</label>
+			<label for="lastNameInput">{{ $t('client.name-input') }}</label>
 			<input v-model="client.lastName" type="text" id="lastNameInput" class="form-control form-control-sm" v-bind:placeholder="$t('client.name-input')"/>
 		</span>
 		<span class="row">
@@ -74,8 +74,10 @@
 
 <script>
 // import routes from './_store'
-const routes = require('./_store')
-const axios = require('axios')
+// const routes = require('./_store')
+// const axios = require('axios')
+import axios from 'axios'
+
 
 export default {
 	name: 'client',
